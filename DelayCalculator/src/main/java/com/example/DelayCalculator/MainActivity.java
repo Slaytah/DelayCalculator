@@ -19,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final TextView triplet = findViewById(R.id.triplet);
+        final TextView triplet = findViewById(R.id.minim_triplet);
         final TextView crotchet = findViewById(R.id.crotchet);
-        final TextView crotchetTriplet = findViewById(R.id.crotchetTriplet);
+        final TextView crotchetTriplet = findViewById(R.id.crotchet_triplet);
         final TextView quaver = findViewById(R.id.quaver);
-        final TextView quaverTriplet = findViewById(R.id.quaverTriplet);
-        final TextView semiQuaver = findViewById(R.id.semiQuaver);
+        final TextView quaverTriplet = findViewById(R.id.quaver_triplet);
+        final TextView semiQuaver = findViewById(R.id.semiquaver);
 
-        NumberPicker numberPicker = findViewById(R.id.numberPicker);
+        NumberPicker numberPicker = findViewById(R.id.number_picker);
 
         numberPicker.setMaxValue(200);
         numberPicker.setValue(120);
@@ -41,18 +41,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     void setUpValues(int pickerValue, TextView triplet, TextView crotchet, TextView crotchetTriplet,
                             TextView quaver, TextView quaverTriplet, TextView semiQuaver) {
-        double milliSecs = 1000 / ((double)pickerValue / 60);
+
+        // e.g. 130 bpm = (130/60)
+        float milliSecs = 1000 / ((float)pickerValue / 60);
         String outPut;
 
-        outPut = String.format("%05.2f", (double)4/3 * milliSecs);
+        outPut = String.format("%05.2f", (float)4/3 * milliSecs);
         triplet.setText(outPut);
 
         outPut = String.format("%05.2f", milliSecs);
         crotchet.setText(outPut);
 
-        outPut = String.format("%05.2f", (double)4/6 * milliSecs);
+        outPut = String.format("%05.2f", (float)4/6 * milliSecs);
         crotchetTriplet.setText(outPut);
 
         outPut = String.format("%05.2f", milliSecs / 2);

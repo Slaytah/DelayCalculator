@@ -8,142 +8,137 @@
     tools:showIn="@layout/activity_main">
 
     <NumberPicker
-        android:id="@+id/numberPicker"
-        android:layout_width="58dp"
-        android:layout_height="134dp"
+        android:id="@+id/number_picker"
+        android:layout_width="106dp"
+        android:layout_height="150dp"
         android:layout_marginTop="37dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_y"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:textColor="@color/colourYellow"
-        android:text ="BPM"
+        android:layout_height="wrap_content"
+        android:text="BPM"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/number_picker"
+        app:layout_constraintEnd_toStartOf="@id/number_picker"
         app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintTop_toTopOf="@id/numberPicker"
-        app:layout_constraintBottom_toBottomOf="@id/numberPicker"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/numberPicker"
+        app:layout_constraintTop_toTopOf="@id/number_picker" />
 
-        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/triplet"
+        android:id="@+id/minim_triplet"
+        style="@style/BPMCalcTextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_marginTop="17dp"
+        android:layout_height="@dimen/text_height"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberPicker" />
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_y" />
     <TextView
         android:id="@+id/crotchet"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_marginTop="17dp"
+        android:layout_height="@dimen/text_height"
+        android:layout_marginTop="@dimen/text_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/triplet" />
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/minim_triplet" />
     <TextView
-        android:id="@+id/crotchetTriplet"
+        android:id="@+id/crotchet_triplet"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        app:layout_constraintTop_toBottomOf="@+id/crotchet"
+        android:layout_height="@dimen/text_height"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/crotchet" />
     <TextView
         android:id="@+id/quaver"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/crotchetTriplet"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/crotchet_triplet" />
     <TextView
-        android:id="@+id/quaverTriplet"
+        android:id="@+id/quaver_triplet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/quaver"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/quaver" />
     <TextView
-        android:id="@+id/semiQuaver"
+        android:id="@+id/semiquaver"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/quaverTriplet"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toEndOf="@id/guideline_x"
+        app:layout_constraintTop_toBottomOf="@+id/quaver_triplet" />
+    
     <!--text labels-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:text="1/2t"
         android:textColor="@color/colourYellow"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintTop_toTopOf="@+id/triplet" />
-
+        app:layout_constraintTop_toTopOf="@+id/minim_triplet" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4"
+        android:text="1/4"
         android:textColor="@color/colourYellow"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintTop_toTopOf="@+id/crotchet" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="6"
+        android:text="1/4t"
         android:textColor="@color/colourYellow"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/crotchetTriplet" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/crotchet_triplet" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/quaver"
-        android:text="8"
+        android:text="1/8"
         android:textColor="@color/colourYellow"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8" />
-
+        app:layout_constraintTop_toTopOf="@+id/quaver" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/quaverTriplet"
-        android:text="12"
+        android:text="1/8t"
         android:textColor="@color/colourYellow"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/quaver_triplet" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/semiQuaver"
-        android:text="16"
+        android:text="1/16"
         android:textColor="@color/colourYellow"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_x"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberPicker"
-        app:layout_constraintHorizontal_bias="0.8"/>
+        app:layout_constraintTop_toTopOf="@+id/semiquaver" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
